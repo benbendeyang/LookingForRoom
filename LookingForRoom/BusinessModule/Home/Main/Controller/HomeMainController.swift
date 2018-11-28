@@ -44,19 +44,17 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
         
         switch viewModel.sections[indexPath.section] {
             
-        case .userInfo:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath)
+        case .banner:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeBannerCell", for: indexPath)
             return cell
             
-        case let .function(rows):
-            switch rows[indexPath.row] {
-            case .myFollow:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MyFollowCell", for: indexPath)
-                return cell
-            case .customerService:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerServiceCell", for: indexPath)
-                return cell
-            }
+        case .navigation:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeNavigationCell", for: indexPath)
+            return cell
+        
+        case .market:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath)
+            return cell
             
         case .logout:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
@@ -71,15 +69,17 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 12
+        return .leastNonzeroMagnitude
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch viewModel.sections[indexPath.section] {
-        case .userInfo:
-            return 110
-        case .function:
-            return 59
+        case .banner:
+            return 270
+        case .navigation:
+            return 106
+        case .market:
+            return 135
         case .logout:
             return 60
         }
@@ -88,16 +88,9 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch viewModel.sections[indexPath.section] {
-        case let .function(rows):
-            switch rows[indexPath.row] {
-            case .myFollow:
-                Log("点击我的关注")
-            case .customerService:
-                Log("点击客服电话")
-            }
         case .logout:
             Log("点击退出登录")
-        case .userInfo: break
+        case .banner, .navigation, .market: break
         }
     }
 }

@@ -11,8 +11,9 @@ import Foundation
 class HomeMainViewModel {
     
     enum SectionType {
-        case userInfo(String)
-        case function([FunctionRowType])
+        case banner(String)
+        case navigation
+        case market
         case logout
         
         enum FunctionRowType {
@@ -22,10 +23,8 @@ class HomeMainViewModel {
         
         var rowCount: Int {
             switch self {
-            case .userInfo:
+            case .banner, .navigation, .market:
                 return 1
-            case let .function(rows):
-                return rows.count
             case .logout:
                 return 1
             }
@@ -34,13 +33,14 @@ class HomeMainViewModel {
     
     // MARK: - 成员变量
     // MARK: 公共
-    open var sections: [UserMainViewModel.SectionType] = []
+    open var sections: [HomeMainViewModel.SectionType] = []
     
     open func refreshData() {
         sections.removeAll()
         
-        sections.append(.userInfo("a"))
-        sections.append(.function([.myFollow, .customerService]))
+        sections.append(.banner("a"))
+        sections.append(.navigation)
+        sections.append(.market)
         sections.append(.logout)
     }
 }
