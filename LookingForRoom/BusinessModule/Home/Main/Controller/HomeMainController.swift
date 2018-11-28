@@ -7,55 +7,97 @@
 //
 
 import UIKit
-import Alamofire
 
 class HomeMainController: BaseViewController {
 
+    @IBOutlet private weak var mainTableView: UITableView!
+    
+    private let viewModel: HomeMainViewModel = HomeMainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        initController()
+    }
+    
+    // MARK: - 初始化
+    private func initController() {
+        viewModel.refreshData()
+        mainTableView.reloadData()
     }
     
     // MARK: - 操作
-    @IBAction func test1(_ sender: Any) {
-        Network.request(target: .demo1, success: { (result) in
-            Log(result)
-//            guard let internet = Internet(JSON: (result as? [String : AnyObject] ?? [:])) else { return }
-//            Log(internet.origin)
-//            Log(internet.url)
-//            Log(internet.Connection)
-//            Log(internet.Host)
-//            Log(internet.Agent)
-        }) { (error) in
-            Log(error.localizedDescription)
+}
+
+extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.sections[section].rowCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch viewModel.sections[indexPath.section] {
+            
+        case .userInfo:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath)
+            return cell
+            
+        case let .function(rows):
+            switch rows[indexPath.row] {
+            case .myFollow:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MyFollowCell", for: indexPath)
+                return cell
+            case .customerService:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerServiceCell", for: indexPath)
+                return cell
+            }
+            
+        case .logout:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
+            return cell
         }
     }
     
-    @IBAction func test2(_ sender: Any) {
-        Network.request(target: .demo2(name: "wuhao"), success: { (result) in
-            Log(result)
-        }) { (error) in
-            Log(error.localizedDescription)
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 12
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch viewModel.sections[indexPath.section] {
+        case .userInfo:
+            return 110
+        case .function:
+            return 59
+        case .logout:
+            return 60
         }
     }
     
-    @IBAction func test3(_ sender: Any) {
-        Network.request(target: .demo3(name: "wuhao", score: 100), success: { (result) in
-            Log(result)
-        }) { (error) in
-            Log(error.localizedDescription)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch viewModel.sections[indexPath.section] {
+        case let .function(rows):
+            switch rows[indexPath.row] {
+            case .myFollow:
+                Log("点击我的关注")
+            case .customerService:
+                Log("点击客服电话")
+            }
+        case .logout:
+            Log("点击退出登录")
+        case .userInfo: break
         }
-    }
-    
-    @IBAction func test4(_ sender: Any) {
-        if KeychainManager.keyChainUpdata(data: "还是一只羊", with: "用户名") {
-            print("更新成功")
-        } else {
-            print("更新失败")
-        }
-    }
-    
-    @IBAction func test5(_ sender: Any) {
     }
 }
