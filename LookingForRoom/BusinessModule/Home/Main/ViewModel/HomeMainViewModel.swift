@@ -14,19 +14,20 @@ class HomeMainViewModel {
         case banner(String)
         case navigation
         case market
-        case logout
+        case recommendHouses([RecommendHousesRowType])
         
-        enum FunctionRowType {
-            case myFollow
-            case customerService
+        enum RecommendHousesRowType {
+            case header
+            case house
+            case footer
         }
         
         var rowCount: Int {
             switch self {
             case .banner, .navigation, .market:
                 return 1
-            case .logout:
-                return 1
+            case let .recommendHouses(rows):
+                return rows.count
             }
         }
     }
@@ -41,6 +42,6 @@ class HomeMainViewModel {
         sections.append(.banner("a"))
         sections.append(.navigation)
         sections.append(.market)
-        sections.append(.logout)
+        sections.append(.recommendHouses([.header, .house, .house, .footer]))
     }
 }

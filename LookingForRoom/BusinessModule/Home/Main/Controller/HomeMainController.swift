@@ -23,6 +23,7 @@ class HomeMainController: BaseViewController {
     
     // MARK: - 初始化
     private func initController() {
+//        mainTableView.estimatedRowHeight = 150
         viewModel.refreshData()
         mainTableView.reloadData()
     }
@@ -56,9 +57,18 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath)
             return cell
             
-        case .logout:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath)
-            return cell
+        case let .recommendHouses(rows):
+            switch rows[indexPath.row] {
+            case .header:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendHouseTitleCell", for: indexPath)
+                return cell
+            case .house:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendHouseCell", for: indexPath)
+                return cell
+            case .footer:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CheckMoreHouseCell", for: indexPath)
+                return cell
+            }
         }
     }
     
@@ -75,21 +85,46 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch viewModel.sections[indexPath.section] {
         case .banner:
-            return 270
+            return UITableView.automaticDimension
         case .navigation:
             return 106
         case .market:
             return 135
-        case .logout:
-            return 60
+        case .recommendHouses:
+            return UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        switch viewModel.sections[indexPath.section] {
+        case let .recommendHouses(rows):
+            switch rows[indexPath.row] {
+            case .house:
+                if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+                    cell.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+                }
+                if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
+                    cell.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
+                    
+                }
+            case .header, .footer:
+                if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+                    cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
+                }
+                if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
+                    cell.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
+                }
+            }
+        default: break
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch viewModel.sections[indexPath.section] {
-        case .logout:
-            Log("点击退出登录")
+        case let .recommendHouses(houses):
+            let house = houses[indexPath.row]
+            Log("点击:\(house)")
         case .banner, .navigation, .market: break
         }
     }
