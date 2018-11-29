@@ -24,6 +24,7 @@ class HomeMainController: BaseViewController {
     // MARK: - 初始化
     private func initController() {
         viewModel.refreshData()
+        mainTableView.register(UINib(nibName: "HouseCell", bundle: nil), forCellReuseIdentifier: "HouseCell")
         mainTableView.reloadData()
     }
     
@@ -117,7 +118,7 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendHouseTitleCell", for: indexPath)
                 return cell
             case .house:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendHouseCell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCell", for: indexPath) as! HouseCell
                 return cell
             case .footer:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CheckMoreHouseCell", for: indexPath) as! CheckMoreHouseCell
@@ -152,7 +153,7 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
             case .header:
                 return 48
             case .house:
-                return 142
+                return 122
             case .footer:
                 return 68
             }
