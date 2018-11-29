@@ -23,7 +23,6 @@ class HomeMainController: BaseViewController {
     
     // MARK: - 初始化
     private func initController() {
-//        mainTableView.estimatedRowHeight = 150
         viewModel.refreshData()
         mainTableView.reloadData()
     }
@@ -31,6 +30,50 @@ class HomeMainController: BaseViewController {
     // MARK: - 操作
 }
 
+// MARK: - 私有方法
+private extension HomeMainController {
+    
+    func toSearch() {
+        print("去搜索")
+    }
+    
+    func checkAllMarket() {
+        print("查看全部行情")
+    }
+    
+    func checkHouse(house: String) {
+        print("查看：\(house)")
+    }
+    
+    func clickNavigation(at index: Int) {
+        switch index {
+        case 0:
+            print("点击二手房")
+        case 1:
+            print("点击新房")
+        case 2:
+            print("点击租房")
+        case 3:
+            print("点击去估价")
+        default: break
+        }
+    }
+    
+    func checkAllHouse() {
+        print("查看全部房源")
+    }
+    
+    func separatorInset(cell: UITableViewCell, edgeInsets: UIEdgeInsets) {
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
+            cell.separatorInset = edgeInsets
+        }
+        if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
+            cell.layoutMargins = edgeInsets
+        }
+    }
+}
+
+// MARK: - 协议
 extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,15 +89,26 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
         switch viewModel.sections[indexPath.section] {
             
         case .banner:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeBannerCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeBannerCell", for: indexPath) as! HomeBannerCell
+            cell.clickSearckBlock = { [weak self] in
+                self?.toSearch()
+            }
             return cell
             
         case .navigation:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeNavigationCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeNavigationCell", for: indexPath) as! HomeNavigationCell
+            cell.clickNavigationBlock = { [weak self] index in
+                self?.clickNavigation(at: index)
+            }
             return cell
         
-        case .market:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath)
+        case let .market(price, volume):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MarketCell", for: indexPath) as! MarketCell
+            cell.averagePriceLabel.text = price
+            cell.volumeLabel.text = volume
+            cell.clickCheckAllBlock = { [weak self] in
+                self?.checkAllMarket()
+            }
             return cell
             
         case let .recommendHouses(rows):
@@ -66,7 +120,10 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RecommendHouseCell", for: indexPath)
                 return cell
             case .footer:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CheckMoreHouseCell", for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "CheckMoreHouseCell", for: indexPath) as! CheckMoreHouseCell
+                cell.clickCheckAllBlock = { [weak self] in
+                    self?.checkAllHouse()
+                }
                 return cell
             }
         }
@@ -82,49 +139,47 @@ extension HomeMainController: UITableViewDelegate, UITableViewDataSource {
         return .leastNonzeroMagnitude
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         switch viewModel.sections[indexPath.section] {
         case .banner:
-            return UITableView.automaticDimension
+            return 270
         case .navigation:
-            return 106
+            return 120
         case .market:
-            return 135
-        case .recommendHouses:
-            return UITableView.automaticDimension
+            return 138
+        case let .recommendHouses(rows):
+            switch rows[indexPath.row] {
+            case .header:
+                return 48
+            case .house:
+                return 142
+            case .footer:
+                return 68
+            }
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        switch viewModel.sections[indexPath.section] {
-        case let .recommendHouses(rows):
-            switch rows[indexPath.row] {
-            case .house:
-                if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-                    cell.separatorInset = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-                }
-                if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
-                    cell.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)
-                    
-                }
-            case .header, .footer:
-                if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-                    cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
-                }
-                if cell.responds(to: #selector(setter: UITableViewCell.layoutMargins)) {
-                    cell.layoutMargins = UIEdgeInsets(top: 0, left: 24, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
-                }
-            }
-        default: break
+        if viewModel.isHouseExceptLast(indexPath: indexPath) {
+            separatorInset(cell: cell, edgeInsets: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24))
+        } else {
+            separatorInset(cell: cell, edgeInsets: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: CGFloat.greatestFiniteMagnitude))
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch viewModel.sections[indexPath.section] {
-        case let .recommendHouses(houses):
-            let house = houses[indexPath.row]
-            Log("点击:\(house)")
+        case let .recommendHouses(rows):
+            switch rows[indexPath.row] {
+            case let .house(house):
+                checkHouse(house: house)
+            case .header, .footer: break
+            }
         case .banner, .navigation, .market: break
         }
     }

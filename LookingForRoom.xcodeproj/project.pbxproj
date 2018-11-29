@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C737921AF9BA100AD34AB /* HomeBannerCell.swift */; };
 		325F8BE321AE4289008812A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8BE221AE4289008812A0 /* AppDelegate.swift */; };
 		325F8BEA21AE428C008812A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BE921AE428C008812A0 /* Assets.xcassets */; };
 		325F8BED21AE428C008812A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BEB21AE428C008812A0 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,9 @@
 		325F8C4121AE48A5008812A0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4021AE48A5008812A0 /* UIView+Extension.swift */; };
 		325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4321AE6439008812A0 /* UserMainViewModel.swift */; };
 		325F8C4721AE7323008812A0 /* HomeMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4621AE7323008812A0 /* HomeMainViewModel.swift */; };
+		32B5A92121AFCB91000FA384 /* HomeNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92021AFCB91000FA384 /* HomeNavigationCell.swift */; };
+		32B5A92321AFD1D9000FA384 /* MarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92221AFD1D9000FA384 /* MarketCell.swift */; };
+		32B5A92521AFE46E000FA384 /* CheckMoreHouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92421AFE46E000FA384 /* CheckMoreHouseCell.swift */; };
 		5956FE206C807163170913CF /* Pods_LookingForRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B6768FEDAA918A6B17C38C /* Pods_LookingForRoomTests.framework */; };
 		79B170A9D471F64AAABB659C /* Pods_LookingForRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80531A75806B168E53FE4A6 /* Pods_LookingForRoom.framework */; };
 		AB6B0AFEBFF7E131C5990128 /* Pods_LookingForRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293E59C3C42C6091B9644EE /* Pods_LookingForRoomUITests.framework */; };
@@ -55,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		2293E59C3C42C6091B9644EE /* Pods_LookingForRoomUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookingForRoomUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		320C737921AF9BA100AD34AB /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
 		325F8BDF21AE4289008812A0 /* LookingForRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookingForRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F8BE221AE4289008812A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325F8BE921AE428C008812A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +90,9 @@
 		325F8C4021AE48A5008812A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		325F8C4321AE6439008812A0 /* UserMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewModel.swift; sourceTree = "<group>"; };
 		325F8C4621AE7323008812A0 /* HomeMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewModel.swift; sourceTree = "<group>"; };
+		32B5A92021AFCB91000FA384 /* HomeNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCell.swift; sourceTree = "<group>"; };
+		32B5A92221AFD1D9000FA384 /* MarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCell.swift; sourceTree = "<group>"; };
+		32B5A92421AFE46E000FA384 /* CheckMoreHouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMoreHouseCell.swift; sourceTree = "<group>"; };
 		3DA3BA37E2B89D9ED1662C4B /* Pods-LookingForRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookingForRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-LookingForRoom/Pods-LookingForRoom.release.xcconfig"; sourceTree = "<group>"; };
 		79B6768FEDAA918A6B17C38C /* Pods_LookingForRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookingForRoomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B4D247CA727401024E1F0 /* Pods-LookingForRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookingForRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LookingForRoom/Pods-LookingForRoom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +139,17 @@
 				2293E59C3C42C6091B9644EE /* Pods_LookingForRoomUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		320C737821AF9ADE00AD34AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				320C737921AF9BA100AD34AB /* HomeBannerCell.swift */,
+				32B5A92021AFCB91000FA384 /* HomeNavigationCell.swift */,
+				32B5A92221AFD1D9000FA384 /* MarketCell.swift */,
+				32B5A92421AFE46E000FA384 /* CheckMoreHouseCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		325F8BD621AE4289008812A0 = {
@@ -211,6 +230,7 @@
 		325F8C1321AE448F008812A0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				320C737821AF9ADE00AD34AB /* View */,
 				325F8C4521AE7307008812A0 /* ViewModel */,
 				325F8C1421AE448F008812A0 /* Controller */,
 			);
@@ -587,11 +607,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B5A92521AFE46E000FA384 /* CheckMoreHouseCell.swift in Sources */,
+				32B5A92121AFCB91000FA384 /* HomeNavigationCell.swift in Sources */,
 				325F8C3821AE448F008812A0 /* BaseTabBarController.swift in Sources */,
 				325F8C3721AE448F008812A0 /* LoginNavigationController.swift in Sources */,
 				325F8BE321AE4289008812A0 /* AppDelegate.swift in Sources */,
 				325F8C3121AE448F008812A0 /* HomeMainController.swift in Sources */,
 				325F8C3D21AE448F008812A0 /* LoginManager.swift in Sources */,
+				32B5A92321AFD1D9000FA384 /* MarketCell.swift in Sources */,
 				325F8C3A21AE448F008812A0 /* BaseNavigationController.swift in Sources */,
 				325F8C3C21AE448F008812A0 /* KeychainManager.swift in Sources */,
 				325F8C3F21AE448F008812A0 /* String+Extension.swift in Sources */,
@@ -600,6 +623,7 @@
 				325F8C3B21AE448F008812A0 /* Service.swift in Sources */,
 				325F8C3321AE448F008812A0 /* UserMainController.swift in Sources */,
 				325F8C4721AE7323008812A0 /* HomeMainViewModel.swift in Sources */,
+				320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */,
 				325F8C3E21AE448F008812A0 /* Internet.swift in Sources */,
 				325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */,
 				325F8C3621AE448F008812A0 /* LoginController.swift in Sources */,

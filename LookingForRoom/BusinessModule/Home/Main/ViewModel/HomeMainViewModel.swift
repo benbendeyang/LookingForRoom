@@ -11,14 +11,14 @@ import Foundation
 class HomeMainViewModel {
     
     enum SectionType {
-        case banner(String)
+        case banner
         case navigation
-        case market
+        case market(price: String, volume: String)
         case recommendHouses([RecommendHousesRowType])
         
         enum RecommendHousesRowType {
             case header
-            case house
+            case house(String)
             case footer
         }
         
@@ -39,9 +39,24 @@ class HomeMainViewModel {
     open func refreshData() {
         sections.removeAll()
         
-        sections.append(.banner("a"))
+        sections.append(.banner)
         sections.append(.navigation)
-        sections.append(.market)
-        sections.append(.recommendHouses([.header, .house, .house, .footer]))
+        sections.append(.market(price: "32780", volume: "7"))
+        sections.append(.recommendHouses([.header, .house("a"), .house("b"), .house("c"), .footer]))
+    }
+    
+    open func isHouseExceptLast(indexPath: IndexPath) -> Bool {
+        switch sections[indexPath.section] {
+        case let .recommendHouses(rows):
+            switch rows[indexPath.row] {
+            case .header, .footer:
+                return false
+            case .house:
+                let nextRow = indexPath.row + 1
+                return (nextRow < (rows.count - 1))
+            }
+        default:
+            return false
+        }
     }
 }
