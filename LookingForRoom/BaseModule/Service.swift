@@ -12,7 +12,7 @@ import Moya
 
 // 定义请求方法
 enum Service {
-    case demo1
+    case recommendHouses(cityId: String, sign: String)
     case demo2(name: String)
     case demo3(name: String, score: Int)
 }
@@ -52,14 +52,15 @@ struct Network {
 
 extension Service: TargetType {
 //    https://www.sojson.com/open/api/weather/json.shtml?city=广州
+//    https://wx.api.ke.com/index/recommend/ershoufang?city_id=440100&sign=
     // 请求服务器的根路径
-    var baseURL: URL { return URL.init(string: "https://www.sojson.com")! }
+    var baseURL: URL { return URL.init(string: "https://wx.api.ke.com")! }
     
     // 每个API对应的具体路径
     var path: String {
         switch self {
-        case .demo1:
-            return "/open/api/weather/json.shtml"
+        case .recommendHouses:
+            return "/index/recommend/ershoufang"
         case .demo2(name: _), .demo3(name: _, score: _):
             return "/post"
         }
@@ -68,7 +69,7 @@ extension Service: TargetType {
     // 各个接口的请求方式，get或post
     var method: Moya.Method {
         switch self {
-        case .demo1:
+        case .recommendHouses:
             return .get
         case .demo2, .demo3:
             return .post
@@ -78,9 +79,9 @@ extension Service: TargetType {
     // 请求是否携带参数，如果需要参数，就做如demo2和demo3的设置
     var task: Task {
         switch self {
-        case .demo1:
+        case let .recommendHouses(cityId, sign):
 //            return .requestPlain // 无参数
-            return .requestParameters(parameters: ["city" : "广州"], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["city_id" : cityId, "sign": sign], encoding: URLEncoding.default)
         case let .demo2(name): // 带有参数,注意前面的let
             return .requestParameters(parameters: ["name" : name], encoding: URLEncoding.default)
         case let .demo3(name, score): // 带有参数,注意前面的let
@@ -91,7 +92,7 @@ extension Service: TargetType {
     // 单元测试使用
     var sampleData: Data {
         switch self {
-        case .demo1, .demo3:
+        case .recommendHouses, .demo3:
             return "just for test".utf8Encoded
         case .demo2(let name):
             return "{\"name\": \(name)\"}".utf8Encoded
@@ -100,6 +101,12 @@ extension Service: TargetType {
     
     // 请求头
     var headers: [String : String]? {
-        return ["Content-type" : "application/json"]
+        return
+            ["Content-type": "application/json",
+             "Lianjia-Uuid": "e610c5d64abb560aa9802194cd47694d",
+             "Authorization": "bGp3eGFwcDo4NDY3YzgyNTFjNTNhZGMxZDhhMTU0YjEyNjNjZjY2NQ==",
+             "Lianjia-Source": "ljwxapp",
+             "Time-Stamp": Date().milliStamp
+        ]
     }
 }

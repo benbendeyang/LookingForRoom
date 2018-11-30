@@ -17,9 +17,7 @@ class Internet: Mappable {
     var Host: String = ""
     var Agent: String = ""
     
-    required init?(map: Map) {
-        
-    }
+    required init?(map: Map) { }
     
     func mapping(map: Map) {
         origin      <- map["origin"]

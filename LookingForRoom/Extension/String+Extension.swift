@@ -11,8 +11,23 @@ import Foundation
 import UIKit
 
 extension String {
+    
     var utf8Encoded: Data {
         return data(using: .utf8)!
+    }
+    
+    /// 使用正则表达式替换
+    func pregReplace(pattern: String, with: String,
+                     options: NSRegularExpression.Options = []) -> String {
+        let regex = try! NSRegularExpression(pattern: pattern, options: options)
+        return regex.stringByReplacingMatches(in: self, options: [],
+                                              range: NSMakeRange(0, self.count),
+                                              withTemplate: with)
+    }
+    
+    /// 是否为空
+    func isBlank() -> Bool {
+        return trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
 

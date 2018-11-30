@@ -20,20 +20,28 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地铁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpL-18-Md0">
-                        <rect key="frame" x="4" y="0.0" width="42" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bpL-18-Md0" secondAttribute="trailing" constant="4" id="Ogq-3m-Ciw"/>
+                <constraint firstAttribute="trailing" secondItem="bpL-18-Md0" secondAttribute="trailing" id="Ogq-3m-Ciw"/>
                 <constraint firstAttribute="bottom" secondItem="bpL-18-Md0" secondAttribute="bottom" id="W3a-rQ-gvL"/>
-                <constraint firstItem="bpL-18-Md0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="k6r-ec-Fou"/>
+                <constraint firstItem="bpL-18-Md0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k6r-ec-Fou"/>
                 <constraint firstItem="bpL-18-Md0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mY0-3n-9XI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="2"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="tagLabel" destination="bpL-18-Md0" id="thP-S9-V1c"/>
+            </connections>
             <point key="canvasLocation" x="64" y="48.125937031484263"/>
         </collectionViewCell>
     </objects>
