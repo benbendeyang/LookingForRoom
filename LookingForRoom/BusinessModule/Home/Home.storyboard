@@ -480,7 +480,9 @@
         <scene sceneID="PS6-4l-Tif">
             <objects>
                 <navigationController title="首页" automaticallyAdjustsScrollViewInsets="NO" id="MHY-NL-rVK" customClass="BaseNavigationController" customModule="LookingForRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="bar_home_normal" id="yyw-HU-Co7"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MPb-b3-GAe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -496,6 +498,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_home_normal" width="24" height="24"/>
         <image name="home_main_avigation1" width="50" height="50"/>
         <image name="home_main_avigation2" width="50" height="50"/>
         <image name="home_main_avigation3" width="50" height="50"/>
