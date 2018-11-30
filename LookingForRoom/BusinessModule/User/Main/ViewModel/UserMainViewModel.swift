@@ -41,6 +41,8 @@ class UserMainViewModel {
         
         sections.append(.userInfo("a"))
         sections.append(.function([.myFollow, .customerService]))
-        sections.append(.logout)
+        if LoginManager.shared.isLogin {
+            sections.append(.logout)
+        }
     }
 }

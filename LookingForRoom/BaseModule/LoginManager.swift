@@ -11,9 +11,18 @@ import UIKit
 
 class LoginManager {
     
-    static let shareManager = LoginManager()
+    private static let accessTokenKey = "LoginStateAccessToken"
     
-    private(set) var isLogin: Bool = false
+    static let shared = LoginManager()
+    
+    private(set) lazy var accessToken: String = {
+        guard let accessToken = KeychainManager.keyChainReadData(identifier: LoginManager.accessTokenKey) as? String else { return "" }
+        return accessToken
+    }()
+    
+    var isLogin: Bool {
+        return !accessToken.isEmpty
+    }
     
     class func login(presentingViewController: UIViewController?) {
         let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController")
