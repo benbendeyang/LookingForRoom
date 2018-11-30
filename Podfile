@@ -12,6 +12,8 @@ target 'LookingForRoom' do
   pod 'Moya', '12.0.1'
   # 模型转换
   pod 'ObjectMapper', '3.3'
+  # 图片缓存
+  pod 'Kingfisher', '4.10.1'
   
   target 'LookingForRoomTests' do
     inherit! :search_paths

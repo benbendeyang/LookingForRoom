@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol HouseCellDisplayProtocol: class {
+protocol HouseCellDisplayProtocol {
+    var pPicUrl: String { get }
     var pTitle: String { get }
     var pDescribe: String { get }
     var pTags: [Tag] { get }
@@ -47,6 +48,7 @@ class HouseCell: UITableViewCell {
     
     open func display(with data: HouseCellDisplayProtocol) {
         displayProtocal = data
+        coverImageView.setImage(urlString: data.pPicUrl)
         titleLabel.text = data.pTitle
         describeLabel.text = data.pDescribe
         totalPriceLabel.text = data.pTotalPrice

@@ -38,6 +38,7 @@
 		32822AF821B10B4B000A75EE /* House+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF721B10B4B000A75EE /* House+Extension.swift */; };
 		32822AFE21B115B7000A75EE /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AFD21B115B7000A75EE /* Tag.swift */; };
 		32822B0021B11BC3000A75EE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AFF21B11BC3000A75EE /* UIColor+Extension.swift */; };
+		32822B0321B12441000A75EE /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822B0221B12441000A75EE /* UIImageView+Extension.swift */; };
 		32B5A92121AFCB91000FA384 /* HomeNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92021AFCB91000FA384 /* HomeNavigationCell.swift */; };
 		32B5A92321AFD1D9000FA384 /* MarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92221AFD1D9000FA384 /* MarketCell.swift */; };
 		32B5A92521AFE46E000FA384 /* CheckMoreHouseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A92421AFE46E000FA384 /* CheckMoreHouseCell.swift */; };
@@ -107,6 +108,7 @@
 		32822AF721B10B4B000A75EE /* House+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "House+Extension.swift"; sourceTree = "<group>"; };
 		32822AFD21B115B7000A75EE /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		32822AFF21B11BC3000A75EE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		32822B0221B12441000A75EE /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		32B5A92021AFCB91000FA384 /* HomeNavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationCell.swift; sourceTree = "<group>"; };
 		32B5A92221AFD1D9000FA384 /* MarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCell.swift; sourceTree = "<group>"; };
 		32B5A92421AFE46E000FA384 /* CheckMoreHouseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMoreHouseCell.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				32B5A93521AFF7F4000FA384 /* CGFloat+Extension.swift */,
 				32822AF021B0E1F2000A75EE /* Date+Extension.swift */,
 				32822AFF21B11BC3000A75EE /* UIColor+Extension.swift */,
+				32822B0221B12441000A75EE /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LookingForRoom/Pods-LookingForRoom-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -592,6 +596,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -674,6 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32822B0321B12441000A75EE /* UIImageView+Extension.swift in Sources */,
 				32B5A92521AFE46E000FA384 /* CheckMoreHouseCell.swift in Sources */,
 				32B5A92121AFCB91000FA384 /* HomeNavigationCell.swift in Sources */,
 				32822AF821B10B4B000A75EE /* House+Extension.swift in Sources */,

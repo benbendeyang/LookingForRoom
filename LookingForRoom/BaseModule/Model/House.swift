@@ -20,6 +20,7 @@ class House: Mappable {
     var totalPrice: Int = 0
     var unitPrice: Int = 0
     var tags: [Tag] = []
+    var picUrl: String = ""
     
     required init?(map: Map) { }
     
@@ -32,6 +33,7 @@ class House: Mappable {
         totalPrice  <- map["total_price"]
         unitPrice   <- map["unit_price"]
         tags        <- map["tags"]
+        picUrl      <- map["list_pic_url"]
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 //打印信息
 func Log<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        setupKFImageCache()
         return true
     }
 
@@ -48,7 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+private extension AppDelegate {
+    
+    func setupKFImageCache() {
+        KingfisherManager.shared.cache.maxDiskCacheSize = 100 * 1024 * 1024
+    }
 }
 

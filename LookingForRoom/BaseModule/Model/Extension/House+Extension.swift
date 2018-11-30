@@ -10,6 +10,10 @@ import Foundation
 
 extension House: HouseCellDisplayProtocol {
     
+    var pPicUrl: String {
+        return picUrl
+    }
+    
     var pTitle: String {
         return title
     }
