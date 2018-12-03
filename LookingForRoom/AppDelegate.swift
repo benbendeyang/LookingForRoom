@@ -22,11 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         setupKFImageCache()
+        updatingLocation()
+        
         return true
     }
 
@@ -57,6 +58,10 @@ private extension AppDelegate {
     
     func setupKFImageCache() {
         KingfisherManager.shared.cache.maxDiskCacheSize = 100 * 1024 * 1024
+    }
+    
+    func updatingLocation() {
+         AppLocationManager.shared.updatingLocation()
     }
 }
 

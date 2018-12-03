@@ -13,6 +13,7 @@ class LoginManager {
     
     static let NotificationUserDidLogin = "NotificationUserDidLogin"
     static let NotificationUserDidLogout = "NotificationUserDidLogout"
+    
     private static let accessTokenKey = "LoginStateAccessToken"
     
     static let shared = LoginManager()

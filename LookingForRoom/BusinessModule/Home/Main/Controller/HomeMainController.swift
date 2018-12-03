@@ -14,7 +14,6 @@ class HomeMainController: BaseViewController {
     @IBOutlet private weak var mainTableView: UITableView!
     
     private let viewModel: HomeMainViewModel = HomeMainViewModel()
-    let header = MJRefreshNormalHeader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,8 @@ class HomeMainController: BaseViewController {
         viewModel.configUpdateAndRefreshData { [weak self] in
             self?.mainTableView.reloadData()
         }
-        mainTableView.mj_header = header
-        header.setRefreshingTarget(self, refreshingAction: #selector(refreshData))
+        mainTableView.mj_header = MJRefreshNormalHeader()
+        mainTableView.mj_header.setRefreshingTarget(self, refreshingAction: #selector(refreshData))
     }
     
     // MARK: - 操作
@@ -41,7 +40,7 @@ class HomeMainController: BaseViewController {
 
 // MARK: - 私有方法
 private extension HomeMainController {
-    
+
     func toSearch() {
         print("去搜索")
     }
