@@ -24,11 +24,45 @@ class UserMainController: BaseViewController {
     
     // MARK: - 初始化
     private func initController() {
-        viewModel.refreshData()
-        mainTableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(loginChange), name: NSNotification.Name(rawValue: LoginManager.NotificationUserDidLogin), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginChange), name: NSNotification.Name(rawValue: LoginManager.NotificationUserDidLogout), object: nil)
+        
+        viewModel.configUpdateAndRefreshData { [weak self] in
+            self?.mainTableView.reloadData()
+        }
     }
     
     // MARK: - 操作
+}
+
+private extension UserMainController {
+    
+    @objc func loginChange() {
+        viewModel.refreshData()
+    }
+    
+    func toLogin() {
+        LoginManager.login(presentingViewController: self)
+    }
+    
+    func logout() {
+        LoginManager.logout()
+    }
+    
+    func toMyFollow() {
+        print("点击我的关注")
+    }
+    
+    func callCustomerService() {
+        let controller = UIAlertController(title: "呼叫:10106188", message: "", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let confirmAction = UIAlertAction(title: "确认", style: .default) { _ in
+            print("呼叫:10106188")
+        }
+        controller.addAction(cancelAction)
+        controller.addAction(confirmAction)
+        present(controller, animated: true, completion: nil)
+    }
 }
 
 extension UserMainController: UITableViewDelegate, UITableViewDataSource {
@@ -45,8 +79,9 @@ extension UserMainController: UITableViewDelegate, UITableViewDataSource {
         
         switch viewModel.sections[indexPath.section] {
             
-        case .userInfo:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath)
+        case let .userInfo(user):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath) as! UserInfoCell
+            cell.display(with: user)
             return cell
             
         case let .function(rows):
@@ -89,16 +124,18 @@ extension UserMainController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         switch viewModel.sections[indexPath.section] {
+        case .userInfo:
+            guard !LoginManager.shared.isLogin else { return }
+            toLogin()
         case let .function(rows):
             switch rows[indexPath.row] {
             case .myFollow:
-                Log("点击我的关注")
+                toMyFollow()
             case .customerService:
-                Log("点击客服电话")
+                callCustomerService()
             }
         case .logout:
-            Log("点击退出登录")
-        case .userInfo: break
+            logout()
         }
     }
 }

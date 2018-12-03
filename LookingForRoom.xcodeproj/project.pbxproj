@@ -32,6 +32,8 @@
 		325F8C4121AE48A5008812A0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4021AE48A5008812A0 /* UIView+Extension.swift */; };
 		325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4321AE6439008812A0 /* UserMainViewModel.swift */; };
 		325F8C4721AE7323008812A0 /* HomeMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8C4621AE7323008812A0 /* HomeMainViewModel.swift */; };
+		327C29D821B4C155001AAB0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29D721B4C155001AAB0C /* User.swift */; };
+		327C29DB21B4C456001AAB0C /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29DA21B4C456001AAB0C /* UserInfoCell.swift */; };
 		32822AF121B0E1F2000A75EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF021B0E1F2000A75EE /* Date+Extension.swift */; };
 		32822AF321B0E411000A75EE /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF221B0E411000A75EE /* RequestResult.swift */; };
 		32822AF521B0EADD000A75EE /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF421B0EADD000A75EE /* House.swift */; };
@@ -102,6 +104,8 @@
 		325F8C4021AE48A5008812A0 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		325F8C4321AE6439008812A0 /* UserMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewModel.swift; sourceTree = "<group>"; };
 		325F8C4621AE7323008812A0 /* HomeMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMainViewModel.swift; sourceTree = "<group>"; };
+		327C29D721B4C155001AAB0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		327C29DA21B4C456001AAB0C /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		32822AF021B0E1F2000A75EE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		32822AF221B0E411000A75EE /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		32822AF421B0EADD000A75EE /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 		325F8C1821AE448F008812A0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				327C29D921B4C434001AAB0C /* View */,
 				325F8C4221AE6422008812A0 /* ViewModel */,
 				325F8C1921AE448F008812A0 /* Controller */,
 			);
@@ -359,6 +364,7 @@
 				32822AF221B0E411000A75EE /* RequestResult.swift */,
 				32822AF421B0EADD000A75EE /* House.swift */,
 				32822AFD21B115B7000A75EE /* Tag.swift */,
+				327C29D721B4C155001AAB0C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,6 +396,14 @@
 				325F8C4621AE7323008812A0 /* HomeMainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		327C29D921B4C434001AAB0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				327C29DA21B4C456001AAB0C /* UserInfoCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		32822AF621B10B2B000A75EE /* Extension */ = {
@@ -683,6 +697,7 @@
 				32B5A92521AFE46E000FA384 /* CheckMoreHouseCell.swift in Sources */,
 				32B5A92121AFCB91000FA384 /* HomeNavigationCell.swift in Sources */,
 				32822AF821B10B4B000A75EE /* House+Extension.swift in Sources */,
+				327C29D821B4C155001AAB0C /* User.swift in Sources */,
 				32822AF521B0EADD000A75EE /* House.swift in Sources */,
 				325F8C3821AE448F008812A0 /* BaseTabBarController.swift in Sources */,
 				325F8C3721AE448F008812A0 /* LoginNavigationController.swift in Sources */,
@@ -702,6 +717,7 @@
 				32822B0021B11BC3000A75EE /* UIColor+Extension.swift in Sources */,
 				32B5A93321AFF13E000FA384 /* HouseTagCell.swift in Sources */,
 				325F8C4721AE7323008812A0 /* HomeMainViewModel.swift in Sources */,
+				327C29DB21B4C456001AAB0C /* UserInfoCell.swift in Sources */,
 				32B5A92921AFE653000FA384 /* HouseCell.swift in Sources */,
 				320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */,
 				325F8C3E21AE448F008812A0 /* Internet.swift in Sources */,

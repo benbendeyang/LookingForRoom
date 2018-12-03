@@ -10,6 +10,10 @@ import UIKit
 
 class LoginController: BaseViewController {
 
+    @IBOutlet weak var userNameLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +37,12 @@ class LoginController: BaseViewController {
     
     @IBAction func clickLogin(_ sender: Any) {
         print("点击登陆")
+        let userName = userNameLabel.text ?? ""
+        let password = passwordLabel.text ?? ""
+        LoginManager.login(phone: userName, password: password) { [weak self] in
+            guard let navigationController = self?.navigationController else { return }
+            navigationController.dismiss(animated: true)
+        }
     }
     
     @IBAction func clickRegister(_ sender: Any) {

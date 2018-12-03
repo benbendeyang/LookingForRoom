@@ -22,14 +22,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="110" id="jMe-iX-cPw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="110" id="jMe-iX-cPw" customClass="UserInfoCell" customModule="LookingForRoom" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jMe-iX-cPw" id="n4t-WI-r23">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-gC-uFJ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="pxW-gC-uFJ">
                                                     <rect key="frame" x="20" y="30" width="50" height="50"/>
                                                     <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -57,6 +57,10 @@
                                                 <constraint firstItem="pxW-gC-uFJ" firstAttribute="leading" secondItem="n4t-WI-r23" secondAttribute="leading" constant="20" id="sCb-7X-0cX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverImageView" destination="pxW-gC-uFJ" id="Kmm-U9-c3E"/>
+                                            <outlet property="titleLabel" destination="cLg-qA-ZPL" id="2Qa-6g-7IS"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyFollowCell" rowHeight="59" id="l2A-rC-uNK">
                                         <rect key="frame" x="0.0" y="138" width="375" height="59"/>
@@ -173,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar_default" width="50" height="50"/>
         <image name="bar_my_normal" width="24" height="24"/>
     </resources>
 </document>

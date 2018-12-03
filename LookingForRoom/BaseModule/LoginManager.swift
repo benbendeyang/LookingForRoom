@@ -11,14 +11,21 @@ import UIKit
 
 class LoginManager {
     
+    static let NotificationUserDidLogin = "NotificationUserDidLogin"
+    static let NotificationUserDidLogout = "NotificationUserDidLogout"
     private static let accessTokenKey = "LoginStateAccessToken"
     
     static let shared = LoginManager()
     
-    private(set) lazy var accessToken: String = {
-        guard let accessToken = KeychainManager.keyChainReadData(identifier: LoginManager.accessTokenKey) as? String else { return "" }
-        return accessToken
-    }()
+    private(set) var accessToken: String = KeychainManager.keyChainReadData(identifier: LoginManager.accessTokenKey) as? String ?? "" {
+        didSet {
+            if accessToken.isEmpty {
+                KeychainManager.keyChianDelete(identifier: LoginManager.accessTokenKey)
+            } else {
+                KeychainManager.keyChainSaveData(data: accessToken, identifier: LoginManager.accessTokenKey)
+            }
+        }
+    }
     
     var isLogin: Bool {
         return !accessToken.isEmpty
@@ -26,7 +33,20 @@ class LoginManager {
     
     class func login(presentingViewController: UIViewController?) {
         let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController")
-        presentingViewController?.present(viewController, animated: true)
+        DispatchQueue.main.async {
+            presentingViewController?.present(viewController, animated: true)
+        }
     }
     
+    class func login(phone: String, password: String, successAction:(() -> Void)?) {
+        // Todo: 登陆
+        LoginManager.shared.accessToken = "asf"
+        NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationUserDidLogin), object: nil)
+        successAction?()
+    }
+    
+    class func logout() {
+        LoginManager.shared.accessToken = ""
+        NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationUserDidLogout), object: nil)
+    }
 }

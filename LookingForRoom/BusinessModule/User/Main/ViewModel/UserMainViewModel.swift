@@ -11,7 +11,7 @@ import Foundation
 class UserMainViewModel {
     
     enum SectionType {
-        case userInfo(String)
+        case userInfo(User?)
         case function([FunctionRowType])
         case logout
         
@@ -35,14 +35,29 @@ class UserMainViewModel {
     // MARK: - 成员变量
     // MARK: 公共
     open var sections: [UserMainViewModel.SectionType] = []
+    open var update: (() -> Void)?
+    
+    // MARK: - 方法
+    // MARK: 公共
+    open func configUpdateAndRefreshData(update: (() -> Void)?) {
+        self.update = update
+        refreshData()
+    }
     
     open func refreshData() {
+        configSections()
+    }
+    
+    // MARK: 私有
+    private func configSections() {
         sections.removeAll()
         
-        sections.append(.userInfo("a"))
+        sections.append(.userInfo(LoginManager.shared.isLogin ? User(JSON: ["id": "13876543210"]) : nil))
         sections.append(.function([.myFollow, .customerService]))
         if LoginManager.shared.isLogin {
             sections.append(.logout)
         }
+        
+        update?()
     }
 }

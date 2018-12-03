@@ -27,7 +27,7 @@ class KeychainManager {
     
     /// 存储数据
     @discardableResult
-    class func keyChainSaveData(data: Any ,with identifier: String) -> Bool {
+    class func keyChainSaveData(data: Any ,identifier: String) -> Bool {
         // 获取存储数据的条件
         var keychainQuaryParameters = createQuaryParameters(identifier: identifier)
         // 删除旧的存储数据
@@ -41,7 +41,7 @@ class KeychainManager {
     
     /// 更新数据
     @discardableResult
-    class func keyChainUpdata(data: Any ,with identifier: String) -> Bool {
+    class func keyChainUpdata(data: Any ,identifier: String) -> Bool {
         // 获取更新的条件
         let keychainUpdataParameters = createQuaryParameters(identifier: identifier)
         // 创建数据存储字典

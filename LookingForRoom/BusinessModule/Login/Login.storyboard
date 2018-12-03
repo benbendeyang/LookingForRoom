@@ -13,7 +13,7 @@
         <!--登陆-->
         <scene sceneID="gOl-vz-ysB">
             <objects>
-                <viewController id="NUN-Eo-Igv" customClass="LoginController" customModule="Pastime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NUN-Eo-Igv" customClass="LoginController" customModule="LookingForRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pid-Eo-Rhi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordLabel" destination="56S-eh-8Dh" id="bj8-Za-keJ"/>
+                        <outlet property="userNameLabel" destination="WhV-T1-4D6" id="UPE-AY-CxH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkC-Dt-ofm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +106,7 @@
         <!--登陆-->
         <scene sceneID="lFp-nD-lJx">
             <objects>
-                <navigationController storyboardIdentifier="LoginNavigationController" title="登陆" automaticallyAdjustsScrollViewInsets="NO" id="p72-fc-vyZ" customClass="LoginNavigationController" customModule="Pastime" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" title="登陆" automaticallyAdjustsScrollViewInsets="NO" id="p72-fc-vyZ" customClass="LoginNavigationController" customModule="LookingForRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xp5-OE-hGK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
