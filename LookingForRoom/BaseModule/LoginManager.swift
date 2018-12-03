@@ -38,11 +38,16 @@ class LoginManager {
         }
     }
     
-    class func login(phone: String, password: String, successAction:(() -> Void)?) {
+    class func login(progress: ProgressDelegate? = nil, phone: String, password: String, successAction:(() -> Void)?) {
         // Todo: 登陆
         LoginManager.shared.accessToken = "asf"
         NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationUserDidLogin), object: nil)
-        successAction?()
+        
+        progress?.startLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            progress?.finishLoading()
+            successAction?()
+        }
     }
     
     class func logout() {

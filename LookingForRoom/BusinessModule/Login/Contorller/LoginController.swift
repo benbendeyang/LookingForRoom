@@ -36,10 +36,9 @@ class LoginController: BaseViewController {
     }
     
     @IBAction func clickLogin(_ sender: Any) {
-        print("点击登陆")
         let userName = userNameLabel.text ?? ""
         let password = passwordLabel.text ?? ""
-        LoginManager.login(phone: userName, password: password) { [weak self] in
+        LoginManager.login(progress: HUDAccessory(view: view, message: "登录中"), phone: userName, password: password) { [weak self] in
             guard let navigationController = self?.navigationController else { return }
             navigationController.dismiss(animated: true)
         }

@@ -8,6 +8,7 @@
 //  我的页
 
 import UIKit
+import MBProgressHUD
 
 class UserMainController: BaseViewController {
 

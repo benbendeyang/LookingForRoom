@@ -14,7 +14,9 @@ target 'LookingForRoom' do
   pod 'ObjectMapper', '3.3'
   # 图片缓存
   pod 'Kingfisher', '4.10.1'
-  
+  # toast
+  pod 'MBProgressHUD', '1.1.0'
+
   target 'LookingForRoomTests' do
     inherit! :search_paths
     # Pods for testing
