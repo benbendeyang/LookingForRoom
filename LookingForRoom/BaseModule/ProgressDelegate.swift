@@ -32,3 +32,20 @@ class HUDAccessory: ProgressDelegate {
         hud?.hide(animated: true)
     }
 }
+
+class RefreshAccessory<T: Refreshable>: ProgressDelegate {
+    
+    private let refreshable: T?
+    
+    init(refreshable: T?) {
+        self.refreshable = refreshable
+    }
+    
+    func startLoading() {
+    }
+    
+    func finishLoading() {
+        refreshable?.stopPullRefreshing()
+        refreshable?.stopPushRefreshing()
+    }
+}

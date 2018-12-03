@@ -47,8 +47,9 @@ class HomeMainViewModel {
         refreshData()
     }
     
-    open func refreshData() {
+    open func refreshData(progressDelegate: ProgressDelegate? = nil) {
         Network.request(target: .recommendHouses(cityId: "440100", sign: ""), success: { [weak self] (result) in
+            progressDelegate?.finishLoading()
             guard let `self` = self, let resultDict = result as? [String : AnyObject], let data = resultDict["data"] as? [String : AnyObject] else { return }
             self.recommendHouses.removeAll()
             data.forEach({ (_, value) in
@@ -58,6 +59,7 @@ class HomeMainViewModel {
             )
             self.configSections()
         }) { (error) in
+            progressDelegate?.finishLoading()
             Log(error.localizedDescription)
         }
     }

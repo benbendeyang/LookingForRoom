@@ -16,6 +16,8 @@ target 'LookingForRoom' do
   pod 'Kingfisher', '4.10.1'
   # toast
   pod 'MBProgressHUD', '1.1.0'
+  # 上下拉刷新
+  pod 'MJRefresh', '3.1.15.7'
 
   target 'LookingForRoomTests' do
     inherit! :search_paths

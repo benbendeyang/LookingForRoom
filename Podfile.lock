@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.6.0)
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.7)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Alamofire (= 4.6.0)
   - Kingfisher (= 4.10.1)
   - MBProgressHUD (= 1.1.0)
+  - MJRefresh (= 3.1.15.7)
   - Moya (= 12.0.1)
   - ObjectMapper (= 3.3)
 
@@ -22,6 +24,7 @@ SPEC REPOS:
     - Alamofire
     - Kingfisher
     - MBProgressHUD
+    - MJRefresh
     - Moya
     - ObjectMapper
     - Result
@@ -30,10 +33,11 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
 
-PODFILE CHECKSUM: f644ccaba8ab578565adcb844ac6088b4acf6b21
+PODFILE CHECKSUM: c7f53f1107581510ac20f3aea226d4e4553387b8
 
 COCOAPODS: 1.5.3

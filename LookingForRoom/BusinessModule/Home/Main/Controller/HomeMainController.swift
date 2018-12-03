@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MJRefresh
 
 class HomeMainController: BaseViewController {
 
     @IBOutlet private weak var mainTableView: UITableView!
     
     private let viewModel: HomeMainViewModel = HomeMainViewModel()
+    let header = MJRefreshNormalHeader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +29,14 @@ class HomeMainController: BaseViewController {
         viewModel.configUpdateAndRefreshData { [weak self] in
             self?.mainTableView.reloadData()
         }
+        mainTableView.mj_header = header
+        header.setRefreshingTarget(self, refreshingAction: #selector(refreshData))
     }
     
     // MARK: - 操作
+    @objc func refreshData() {
+        viewModel.refreshData(progressDelegate: RefreshAccessory(refreshable: mainTableView))
+    }
 }
 
 // MARK: - 私有方法

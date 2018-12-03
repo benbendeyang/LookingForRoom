@@ -35,6 +35,7 @@
 		327C29D821B4C155001AAB0C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29D721B4C155001AAB0C /* User.swift */; };
 		327C29DB21B4C456001AAB0C /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29DA21B4C456001AAB0C /* UserInfoCell.swift */; };
 		327C29DF21B50F10001AAB0C /* ProgressDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29DE21B50F10001AAB0C /* ProgressDelegate.swift */; };
+		327C29E421B51ACA001AAB0C /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C29E321B51ACA001AAB0C /* Refreshable.swift */; };
 		32822AF121B0E1F2000A75EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF021B0E1F2000A75EE /* Date+Extension.swift */; };
 		32822AF321B0E411000A75EE /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF221B0E411000A75EE /* RequestResult.swift */; };
 		32822AF521B0EADD000A75EE /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32822AF421B0EADD000A75EE /* House.swift */; };
@@ -108,6 +109,7 @@
 		327C29D721B4C155001AAB0C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		327C29DA21B4C456001AAB0C /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		327C29DE21B50F10001AAB0C /* ProgressDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDelegate.swift; sourceTree = "<group>"; };
+		327C29E321B51ACA001AAB0C /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		32822AF021B0E1F2000A75EE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		32822AF221B0E411000A75EE /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		32822AF421B0EADD000A75EE /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
@@ -349,12 +351,12 @@
 		325F8C2821AE448F008812A0 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				327C29E221B51A9B001AAB0C /* Manager */,
+				325F8C2C21AE448F008812A0 /* Model */,
 				32B5A92621AFE622000FA384 /* View */,
 				325F8C2921AE448F008812A0 /* Service.swift */,
-				325F8C2A21AE448F008812A0 /* KeychainManager.swift */,
-				325F8C2B21AE448F008812A0 /* LoginManager.swift */,
-				325F8C2C21AE448F008812A0 /* Model */,
 				327C29DE21B50F10001AAB0C /* ProgressDelegate.swift */,
+				327C29E321B51ACA001AAB0C /* Refreshable.swift */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -407,6 +409,15 @@
 				327C29DA21B4C456001AAB0C /* UserInfoCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		327C29E221B51A9B001AAB0C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				325F8C2A21AE448F008812A0 /* KeychainManager.swift */,
+				325F8C2B21AE448F008812A0 /* LoginManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		32822AF621B10B2B000A75EE /* Extension */ = {
@@ -605,6 +616,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -616,6 +628,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -725,6 +738,7 @@
 				327C29DB21B4C456001AAB0C /* UserInfoCell.swift in Sources */,
 				32B5A92921AFE653000FA384 /* HouseCell.swift in Sources */,
 				320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */,
+				327C29E421B51ACA001AAB0C /* Refreshable.swift in Sources */,
 				325F8C3E21AE448F008812A0 /* Internet.swift in Sources */,
 				327C29DF21B50F10001AAB0C /* ProgressDelegate.swift in Sources */,
 				325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */,
