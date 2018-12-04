@@ -55,14 +55,7 @@ private extension UserMainController {
     }
     
     func callCustomerService() {
-        let controller = UIAlertController(title: "呼叫:10106188", message: "", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        let confirmAction = UIAlertAction(title: "确认", style: .default) { _ in
-            print("呼叫:10106188")
-        }
-        controller.addAction(cancelAction)
-        controller.addAction(confirmAction)
-        present(controller, animated: true, completion: nil)
+        AppManager.makeCall("10106188")
     }
 }
 

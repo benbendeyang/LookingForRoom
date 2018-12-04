@@ -62,7 +62,6 @@ private extension AppDelegate {
         NetworkReachabilityManager.init()?.startListening()
         let urlCache = URLCache.init(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         URLCache.shared = urlCache
-//        URLCache.shared.removeAllCachedResponses() 清除缓存
     }
     
     func setupKFImageCache() {

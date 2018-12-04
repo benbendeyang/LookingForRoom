@@ -10,6 +10,7 @@
 		320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C737921AF9BA100AD34AB /* HomeBannerCell.swift */; };
 		324F9D4E21B61619007E5280 /* HouseDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D4D21B61619007E5280 /* HouseDetailsController.swift */; };
 		324F9D5121B620BC007E5280 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D5021B620BC007E5280 /* BaseTabBar.swift */; };
+		324F9D5321B65FDA007E5280 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D5221B65FDA007E5280 /* AppManager.swift */; };
 		325F8BE321AE4289008812A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8BE221AE4289008812A0 /* AppDelegate.swift */; };
 		325F8BEA21AE428C008812A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BE921AE428C008812A0 /* Assets.xcassets */; };
 		325F8BED21AE428C008812A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BEB21AE428C008812A0 /* LaunchScreen.storyboard */; };
@@ -81,6 +82,7 @@
 		320C737921AF9BA100AD34AB /* HomeBannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCell.swift; sourceTree = "<group>"; };
 		324F9D4D21B61619007E5280 /* HouseDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailsController.swift; sourceTree = "<group>"; };
 		324F9D5021B620BC007E5280 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
+		324F9D5221B65FDA007E5280 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		325F8BDF21AE4289008812A0 /* LookingForRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookingForRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F8BE221AE4289008812A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325F8BE921AE428C008812A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				325F8C2A21AE448F008812A0 /* KeychainManager.swift */,
 				325F8C2B21AE448F008812A0 /* LoginManager.swift */,
 				327C29E521B52C57001AAB0C /* AppLocationManager.swift */,
+				324F9D5221B65FDA007E5280 /* AppManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				327C29DF21B50F10001AAB0C /* ProgressDelegate.swift in Sources */,
 				325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */,
 				325F8C3621AE448F008812A0 /* LoginController.swift in Sources */,
+				324F9D5321B65FDA007E5280 /* AppManager.swift in Sources */,
 				324F9D5121B620BC007E5280 /* BaseTabBar.swift in Sources */,
 				324F9D4E21B61619007E5280 /* HouseDetailsController.swift in Sources */,
 				32822AFE21B115B7000A75EE /* Tag.swift in Sources */,
