@@ -43,7 +43,6 @@ private extension HomeMainController {
 
     func toSearch() {
         print("去搜索")
-        present(HouseDetailsController.fromStoryboard(), animated: true, completion: nil)
     }
     
     func checkAllMarket() {

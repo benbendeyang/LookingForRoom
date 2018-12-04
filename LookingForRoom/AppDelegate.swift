@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import Kingfisher
 
 //打印信息
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        setupNetworkCache()
         setupKFImageCache()
         updatingLocation()
         
@@ -55,6 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 private extension AppDelegate {
+    
+    func setupNetworkCache() {
+        NetworkReachabilityManager.init()?.startListening()
+        let urlCache = URLCache.init(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
+        URLCache.shared = urlCache
+//        URLCache.shared.removeAllCachedResponses() 清除缓存
+    }
     
     func setupKFImageCache() {
         KingfisherManager.shared.cache.maxDiskCacheSize = 100 * 1024 * 1024
