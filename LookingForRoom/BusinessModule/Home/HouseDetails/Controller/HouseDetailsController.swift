@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HouseDetailsController: UIViewController {
+class HouseDetailsController: BaseViewController {
 
     static func fromStoryboard() -> HouseDetailsController {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
