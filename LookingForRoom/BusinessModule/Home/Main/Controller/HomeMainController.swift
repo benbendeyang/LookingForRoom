@@ -43,6 +43,7 @@ private extension HomeMainController {
 
     func toSearch() {
         print("去搜索")
+        present(HouseDetailsController.fromStoryboard(), animated: true, completion: nil)
     }
     
     func checkAllMarket() {
@@ -51,6 +52,7 @@ private extension HomeMainController {
     
     func checkHouse(house: String) {
         print("查看：\(house)")
+        navigationController?.pushViewController(HouseDetailsController.fromStoryboard(), animated: true)
     }
     
     func clickNavigation(at index: Int) {

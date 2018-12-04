@@ -24,7 +24,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="n9O-S3-9S0" customClass="BaseTabBarController" customModule="LookingForRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z8E-00-fQw">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z8E-00-fQw" customClass="BaseTabBar" customModule="LookingForRoom" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

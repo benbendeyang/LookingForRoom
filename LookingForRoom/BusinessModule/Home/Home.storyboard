@@ -470,11 +470,48 @@
                     <navigationItem key="navigationItem" title="贝壳找房" id="GJQ-aQ-O57"/>
                     <connections>
                         <outlet property="mainTableView" destination="MrC-12-6fJ" id="Lpa-qe-dUc"/>
+                        <segue destination="RC8-MK-ip9" kind="show" identifier="toHouseDetails" id="7gr-6b-Kpa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYK-U5-VRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="42.728635682158924"/>
+        </scene>
+        <!--House Details Controller-->
+        <scene sceneID="IQz-8f-lA5">
+            <objects>
+                <viewController storyboardIdentifier="HouseDetailsController" hidesBottomBarWhenPushed="YES" id="RC8-MK-ip9" customClass="HouseDetailsController" customModule="LookingForRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DXG-Qu-ml6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM8-oG-aex">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-P1-6c5">
+                                <rect key="frame" x="166" y="264" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="RC8-MK-ip9" eventType="touchUpInside" id="bQG-Yp-yHw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TM8-oG-aex" firstAttribute="centerX" secondItem="DXG-Qu-ml6" secondAttribute="centerX" id="6QT-mo-Kxm"/>
+                            <constraint firstItem="TM8-oG-aex" firstAttribute="centerY" secondItem="DXG-Qu-ml6" secondAttribute="centerY" id="MpS-KW-dla"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VPb-6h-DJJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r04-1G-phT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3o-jy-frU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="43"/>
         </scene>
         <!--首页-->
         <scene sceneID="PS6-4l-Tif">
@@ -486,6 +523,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MPb-b3-GAe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -71,7 +71,6 @@ class AppLocationManager: NSObject {
     }
 }
 
-
 // MARK: - 定位代理
 extension AppLocationManager: CLLocationManagerDelegate {
     

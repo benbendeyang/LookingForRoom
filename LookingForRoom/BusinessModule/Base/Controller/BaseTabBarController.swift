@@ -14,6 +14,12 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initController()
+    }
+    
+    // MARK: - 初始化
+    private func initController() {
+        self.tabBar.isTranslucent = false
     }
     
 
