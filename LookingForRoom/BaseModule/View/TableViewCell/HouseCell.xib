@@ -104,7 +104,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="collectionViewLayout" destination="2vY-4i-5xW" id="gl7-UG-d6K"/>
                 <outlet property="coverImageView" destination="8iM-Pb-Inq" id="8Gx-so-jAb"/>
                 <outlet property="describeLabel" destination="vKz-6M-x4i" id="mjl-U1-m0e"/>
                 <outlet property="tagCollectionView" destination="xHJ-Gc-Nnd" id="fiF-yZ-6a4"/>

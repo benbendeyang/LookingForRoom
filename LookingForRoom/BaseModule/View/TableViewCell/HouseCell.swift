@@ -26,15 +26,12 @@ class HouseCell: UITableViewCell {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var unitPriceLabel: UILabel!
     
-    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
-    
     var displayProtocal: HouseCellDisplayProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        collectionViewLayout.estimatedItemSize = CGSize(width: 40, height: 15)
         tagCollectionView.register(UINib(nibName: "HouseTagCell", bundle: nil), forCellWithReuseIdentifier: "HouseTagCell")
         tagCollectionView.delegate = self
         tagCollectionView.dataSource = self
