@@ -11,6 +11,7 @@
 		324F9D4E21B61619007E5280 /* HouseDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D4D21B61619007E5280 /* HouseDetailsController.swift */; };
 		324F9D5121B620BC007E5280 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D5021B620BC007E5280 /* BaseTabBar.swift */; };
 		324F9D5321B65FDA007E5280 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D5221B65FDA007E5280 /* AppManager.swift */; };
+		324F9D5621B68337007E5280 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F9D5521B68337007E5280 /* PopupController.swift */; };
 		325F8BE321AE4289008812A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F8BE221AE4289008812A0 /* AppDelegate.swift */; };
 		325F8BEA21AE428C008812A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BE921AE428C008812A0 /* Assets.xcassets */; };
 		325F8BED21AE428C008812A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325F8BEB21AE428C008812A0 /* LaunchScreen.storyboard */; };
@@ -83,6 +84,7 @@
 		324F9D4D21B61619007E5280 /* HouseDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailsController.swift; sourceTree = "<group>"; };
 		324F9D5021B620BC007E5280 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
 		324F9D5221B65FDA007E5280 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		324F9D5521B68337007E5280 /* PopupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupController.swift; sourceTree = "<group>"; };
 		325F8BDF21AE4289008812A0 /* LookingForRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookingForRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325F8BE221AE4289008812A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325F8BE921AE428C008812A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +216,14 @@
 				324F9D5021B620BC007E5280 /* BaseTabBar.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		324F9D5421B682D7007E5280 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				324F9D5521B68337007E5280 /* PopupController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		325F8BD621AE4289008812A0 = {
@@ -385,6 +395,7 @@
 		325F8C2821AE448F008812A0 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				324F9D5421B682D7007E5280 /* Controller */,
 				327C29E221B51A9B001AAB0C /* Manager */,
 				325F8C2C21AE448F008812A0 /* Model */,
 				32B5A92621AFE622000FA384 /* View */,
@@ -784,6 +795,7 @@
 				324F9D5121B620BC007E5280 /* BaseTabBar.swift in Sources */,
 				324F9D4E21B61619007E5280 /* HouseDetailsController.swift in Sources */,
 				32822AFE21B115B7000A75EE /* Tag.swift in Sources */,
+				324F9D5621B68337007E5280 /* PopupController.swift in Sources */,
 				32B5A93621AFF7F4000FA384 /* CGFloat+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
