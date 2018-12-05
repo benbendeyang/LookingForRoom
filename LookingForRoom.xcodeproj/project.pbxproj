@@ -56,6 +56,7 @@
 		32B5A93321AFF13E000FA384 /* HouseTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A93121AFF13E000FA384 /* HouseTagCell.swift */; };
 		32B5A93421AFF13E000FA384 /* HouseTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32B5A93221AFF13E000FA384 /* HouseTagCell.xib */; };
 		32B5A93621AFF7F4000FA384 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B5A93521AFF7F4000FA384 /* CGFloat+Extension.swift */; };
+		32D99F2721B77B4E00960D6E /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D99F2621B77B4E00960D6E /* Const.swift */; };
 		5956FE206C807163170913CF /* Pods_LookingForRoomTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B6768FEDAA918A6B17C38C /* Pods_LookingForRoomTests.framework */; };
 		79B170A9D471F64AAABB659C /* Pods_LookingForRoom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80531A75806B168E53FE4A6 /* Pods_LookingForRoom.framework */; };
 		AB6B0AFEBFF7E131C5990128 /* Pods_LookingForRoomUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2293E59C3C42C6091B9644EE /* Pods_LookingForRoomUITests.framework */; };
@@ -135,6 +136,7 @@
 		32B5A93121AFF13E000FA384 /* HouseTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTagCell.swift; sourceTree = "<group>"; };
 		32B5A93221AFF13E000FA384 /* HouseTagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseTagCell.xib; sourceTree = "<group>"; };
 		32B5A93521AFF7F4000FA384 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		32D99F2621B77B4E00960D6E /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		3DA3BA37E2B89D9ED1662C4B /* Pods-LookingForRoom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookingForRoom.release.xcconfig"; path = "Pods/Target Support Files/Pods-LookingForRoom/Pods-LookingForRoom.release.xcconfig"; sourceTree = "<group>"; };
 		79B6768FEDAA918A6B17C38C /* Pods_LookingForRoomTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LookingForRoomTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B4D247CA727401024E1F0 /* Pods-LookingForRoom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookingForRoom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LookingForRoom/Pods-LookingForRoom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				327C29E221B51A9B001AAB0C /* Manager */,
 				325F8C2C21AE448F008812A0 /* Model */,
 				32B5A92621AFE622000FA384 /* View */,
+				32D99F2621B77B4E00960D6E /* Const.swift */,
 				325F8C2921AE448F008812A0 /* Service.swift */,
 				327C29DE21B50F10001AAB0C /* ProgressDelegate.swift */,
 				327C29E321B51ACA001AAB0C /* Refreshable.swift */,
@@ -787,6 +790,7 @@
 				32B5A92921AFE653000FA384 /* HouseCell.swift in Sources */,
 				320C737A21AF9BA100AD34AB /* HomeBannerCell.swift in Sources */,
 				327C29E421B51ACA001AAB0C /* Refreshable.swift in Sources */,
+				32D99F2721B77B4E00960D6E /* Const.swift in Sources */,
 				325F8C3E21AE448F008812A0 /* Internet.swift in Sources */,
 				327C29DF21B50F10001AAB0C /* ProgressDelegate.swift in Sources */,
 				325F8C4421AE6439008812A0 /* UserMainViewModel.swift in Sources */,
